@@ -12,9 +12,10 @@ if x\[m\] = y\[n\] then every common subsequence of x\[0...m) and y\[0...n) can 
 
 if x\[m\] &ne; y\[n\] this implies (&forall;z:: z &ne; x\[m\] &or; z &ne; y\[n\]). Intuitively: if there is a z equal to a and b, then a and b are equal. Thus  x\[m\] &ne; y\[n\] implies  l&#8729;(m+1)&#8729;(n+1) =  l&#8729;m&#8729;(n+1) max  l&#8729;(m+1)&#8729;n because either x\[m\] or y\[n\] does not play a role for a LCM.
 
-A natural solution is a recursive function l(m,n:int) : int ;<br/>
-{ pre: 0&le;m&leM, 0&le;n&le;N, pst: len = l&#8729;m&#8729;n }<br/>
+A natural solution is a recursive function len(m,n:int) : int ;<br/>
+{ pre: 0&le;m&le;M, 0&le;n&le;N, post: len = l&#8729;m&#8729;n }<br/>
 if m = 0 &or; n = 0 -> len := 0<br/>
 elif x(m-1) = y(m-1) -> len := 1 + len(m-1,n-1)<br/>
 else len := len(m-1,n) max len(m,n-1)<br/>
     
+len(M,N) gives the longest common subsequence.

@@ -61,7 +61,7 @@ When n=N, then Q<sub>1</sub> is defined over an empty domain, thus N provides a 
 &equiv; 
 h&#8729;0 = l&#8729;(m+1)&#8729;0 &and; (&forall;i: 0<i&le;N: h&#8729;i = l&#8729;m&#8729;i)<br/>
 &equiv;  \{ l&#8729;(m+1)&#8729;0 = l&#8729;m&#8729;0 (=0) \}<br/>
-P<sub>0</sub><
+P<sub>0</sub>
 
 For n+1:<br/>
 Q<sub>0</sub>(n=n+1)<br/>

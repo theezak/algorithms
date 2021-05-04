@@ -75,12 +75,15 @@ l&#8729;(m+1)&#8729;n = {Q<sub>0</sub>} h&#8729;n<br/>
 l&#8729;m&#8729;(n+1) = {Q<sub>1</sub>} h&#8729;(n+1)<br/>
 l&#8729;m&#8729;n = {introduce Q<sub>3</sub>} a<br/>
 with new invariant Q<sub>3</sub> a = l&#8729;m&#8729;n<br/>
-Q<sub>3</sub>(n=n+1)<br/>
+
+For the base case Q<sub>3</sub>(n=o)<br/>
 &equiv;<br/>
 l&#8729;m&#8729;0<br/>
 &equiv;<br/>
 0</br>
-thus a = 0 is the initialization step. Invariance for Q3 (n := n+1):<br/>
+thus a = 0 is the initialization step. 
+
+Invariance for Q3 (n := n+1):<br/>
 l&#8729;m&#8729;(n+1)<br/>
 &equiv; {Q<sub>1</sub>}<br/>
 h&#8729;(n+1)<br/>

@@ -21,10 +21,10 @@ if x\[m\] &ne; y\[n\] this implies (&forall;z:: z &ne; x\[m\] &or; z &ne; y\[n\]
 A natural solution is a recursive function len(m,n:int) : int ;<br/>
 { pre: 0&le;m&le;M, 0&le;n&le;N, post: len = l&#8729;m&#8729;n }<br/>
 if m = 0 &or; n = 0 -> len := 0<br/>
-elif x(m-1) = y(m-1) -> len := 1 + len(m-1,n-1)<br/>
+elif x(m-1) = y(n-1) -> len := 1 + len(m-1,n-1)<br/>
 else len := len(m-1,n) max len(m,n-1)<br/>
     
-len(M,N) gives the longest common subsequence.
+len(M,N) is the longest common subsequence for arrays x\[0...M) and y\[0...N).
 
 ## Dynamic programming solution
 

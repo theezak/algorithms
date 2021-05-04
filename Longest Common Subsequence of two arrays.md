@@ -15,4 +15,6 @@ if x\[m\] &ne; y\[n\] this implies (&forall;z:: z &ne; x\[m\] &or; z &ne; y\[n\]
 A natural solution is a recursive function l(m,n:int) : int ;<br/>
 { pre: 0&le;m&leM, 0&le;n&le;N, pst: len = l&#8729;m&#8729;n }<br/>
 if m = 0 &or; n = 0 -> len := 0<br/>
-else if m &ne; 0 $and; n &ne; 0 ->
+elif x(m-1) = y(m-1) -> len := 1 + len(m-1,n-1)<br/>
+else len := len(m-1,n) max len(m,n-1)<br/>
+    

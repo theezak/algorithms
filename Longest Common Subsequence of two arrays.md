@@ -34,8 +34,38 @@ The idea to compute function l row by row is formalized as follows: we introduce
 P<sub>0</sub>: h = l&#8729;m (i.e. &forall;i : 0&le;i&le;N: h&#8729;i = l&#8729;m&#8729;i))
 P<sub>1</sub>: 0&le;m&le;M
 then P<sub>0</sub> &and; m = M => h&#8729;N = l&#8729;M&#8729;N<br/>
-hence m &neq; M is the guard of the repetition where m represents a row index and n represents a column index.<br/>
+hence m &ne; M is the guard of the repetition where m represents a row index and n represents a column index.<br/>
 Substitution of m=0: <br/>
-(&forall;i: 0 $le;i&le;N: h&#8729;i = l&#8729;0&#8729;i)<br/>
+(&forall;i: 0&le;i&le;N: h&#8729;i = l&#8729;0&#8729;i)<br/>
 &equiv; \<by definition of l\><br/>
 (&forall;i: 0&le;i&le;N: h&equiv;i = 0)
+
+Thus initialization step is:<br/>
+k = 0;
+do k &ne; N+1 -> h&#8729;k = 0; k = k + 1; od
+m  = 0;
+{ P<sub>0</sub> &and; P<sub>1</sub> }
+do m &ne; M -> <b>h = l&#8729;(m+1);</b> m = m + 1; od
+with the bolded <b>h = l&#8729;(m+1);</b> remaining to solve for.
+
+P<sub>0</sub>(m = m + 1)<br/>
+&equiv; \< by definition of P<sub>0</sub> \>
+(&forall;i: 0&le;i&le;N: h&#8729;i = l&#8729;(m+1)&#8729;i)<br/>
+
+For this we introduce another repetition (using integer n) with invariants<br/>
+Q<sub>0</sub>: (&forall;i: 0&le;i&le;n: h&#8729;i = l&#8729;(m+1)&#8729;i)<br/>
+Q<sub>1</sub>: (&forall;i: n<i&le;N: h&#8729;i = l&#8729;m&#8729;i)
+Q<sub>2</sub>: o&le;n&le;N
+When n=N, then Q<sub>1</sub> is defined over an empty domain, thus N provides a valid upper limit. For the lower limit of 0 we have the following base case:<br/>
+(Q<sub>0</sub> &and; Q<sub>1</sub>)(n :=0)<br/>
+&equiv; 
+h&#8729;0 = l&#8729;(m+1)&#8729;0 &and; (&forall;i: 0<i&le;N: h&#8729;i = l&#8729;m&#8729;i)<br/>
+&equiv;  \{ l&#8729;(m+1)&#8729;0 = l&#8729;m&#8729;0 (=0) \}<br/>
+P<sub>0</sub>
+
+For n+1:<br/>
+Q<sub>0</sub>(n=n+1)<br/>
+&equiv; \{ substitute \}
+(&forall;i: 0&le;i&le;n+1: h&#8729;i = ;&#8729;(m+1)&#8729;i)>br/>
+&equiv; \{ split off i=n+1, Q,Sub>0</sub>\}<br/>
+Q<sub>0</sub> &and; h&#8729;(n+1)=l&#8729;(m+1)&#8729;(n+1)

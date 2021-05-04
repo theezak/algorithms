@@ -66,6 +66,6 @@ P<sub>0</sub>
 For n+1:<br/>
 Q<sub>0</sub>(n=n+1)<br/>
 &equiv; \{ substitute \}<br/>
-(&forall;i: 0&le;i&le;n+1: h&#8729;i = ;&#8729;(m+1)&#8729;i)>br/>
+(&forall;i: 0&le;i&le;n+1: h&#8729;i = ;&#8729;(m+1)&#8729;i)<br/>
 &equiv; \{ split off i=n+1, Q,Sub>0</sub>\}<br/>
 Q<sub>0</sub> &and; h&#8729;(n+1)=l&#8729;(m+1)&#8729;(n+1)<br/>

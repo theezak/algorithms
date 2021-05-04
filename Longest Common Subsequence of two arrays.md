@@ -19,3 +19,5 @@ elif x(m-1) = y(m-1) -> len := 1 + len(m-1,n-1)<br/>
 else len := len(m-1,n) max len(m,n-1)<br/>
     
 len(M,N) gives the longest common subsequence.
+
+There is however also a dynamic programming solution. The dynamic programming solution requires additional space (matrix of MxN) to store the values needed for computation. Thus an additional requirement is to minimize the storage requirement.

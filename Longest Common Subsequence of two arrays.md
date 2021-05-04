@@ -58,7 +58,7 @@ Q<sub>1</sub>: (&forall;i: n<i&le;N: h&#8729;i = l&#8729;m&#8729;i)<br/>
 Q<sub>2</sub>: o&le;n&le;N<br/>
 When n=N, then Q<sub>1</sub> is defined over an empty domain, thus N provides a valid upper limit. For the lower limit of 0 we have the following base case:<br/>
 (Q<sub>0</sub> &and; Q<sub>1</sub>)(n :=0)<br/>
-&equiv; 
+&equiv; <br/>
 h&#8729;0 = l&#8729;(m+1)&#8729;0 &and; (&forall;i: 0<i&le;N: h&#8729;i = l&#8729;m&#8729;i)<br/>
 &equiv;  \{ l&#8729;(m+1)&#8729;0 = l&#8729;m&#8729;0 (=0) \}<br/>
 P<sub>0</sub>

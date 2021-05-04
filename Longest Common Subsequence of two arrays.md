@@ -5,6 +5,8 @@ The longest common subsequence of x and y is given by l&#8729;M&#8729;N.
 Trivially, l&#8729;0&#8729;n = 0 and l&#8729;m&#8729;0 = 0 for any 0&le;m&lt;M and 0&le;n&lt;N.
 
 Derive l&#8729;(m+1)&#8729;(n+1): 
+
 if x\[m\] = y\[n\] then every common subsequence of x\[0...m) and y\[0...n) can be extended with x\[m\] so l&#8729;(m+1)&#8729;(n+1) = 1 + l&#8729;m&#8729;n
-if x\[m\] &ne; y\[n\]
+
+if x\[m\] &ne; y\[n\] this implies (&forall;z:: z &ne; x\[m\] &or; z &ne; y\[n\])
 

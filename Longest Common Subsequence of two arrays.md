@@ -69,3 +69,19 @@ Q<sub>0</sub>(n=n+1)<br/>
 (&forall;i: 0&le;i&le;n+1: h&#8729;i = ;&#8729;(m+1)&#8729;i)<br/>
 &equiv; \{ split off i=n+1, Q,Sub>0</sub>\}<br/>
 Q<sub>0</sub> &and; h&#8729;(n+1)=l&#8729;(m+1)&#8729;(n+1)<br/>
+
+Based upon the definition of l&#8729;(m+1)&#8729;(n+1) we know it can be expressed in terms of l&#8729;m&#8729;n, l&#8729;(m+1)&#8729;n and l&#8729;m&#8729;(n+1).<br/>
+l&#8729;(m+1)&#8729;n = {Q<sub>0</sub>} h&#8729;n<br/>
+l&#8729;m&#8729;(n+1) = {Q<sub>1</sub>} h&#8729;(n+1)<br/>
+l&#8729;m&#8729;n = {introduce Q<sub>3</sub>} a<br/>
+with new invariant Q<sub>3</sub> a = l&#8729;m&#8729;n<br/>
+Q<sub>3</sub>(n=n+1)<br/>
+&equiv;<br/>
+l&#8729;m&#8729;0<br/>
+&equiv;<br/>
+0</br>
+thus a = 0 is the initialization step. Invariance for Q3 (n := n+1):<br/>
+l&#8729;m&#8729;(n+1)<br/>
+&equiv; {Q<sub>1</sub>}<br/>
+h&#8729;(n+1)<br/>
+hence a := h(n+1)

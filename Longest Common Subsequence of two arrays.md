@@ -8,5 +8,5 @@ Derive l&#8729;(m+1)&#8729;(n+1):
 
 if x\[m\] = y\[n\] then every common subsequence of x\[0...m) and y\[0...n) can be extended with x\[m\] so l&#8729;(m+1)&#8729;(n+1) = 1 + l&#8729;m&#8729;n
 
-if x\[m\] &ne; y\[n\] this implies (&forall;z:: z &ne; x\[m\] &or; z &ne; y\[n\])
+if x\[m\] &ne; y\[n\] this implies (&forall;z:: z &ne; x\[m\] &or; z &ne; y\[n\]). Intuitively: if there is a z equal to a and b, then a and b are equal. Thus  x\[m\] &ne; y\[n\] implies  l&#8729;(m+1)&#8729;(n+1) =  l&#8729;m&#8729;(n+1) max  l&#8729;(m+1)&#8729;n because either x\[m\] or y\[n\] does not play a role for a LCM.
 

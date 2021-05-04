@@ -1,1 +1,1 @@
-Given M `&ge;` 0, N `&ge;` 0
+Given M &ge; 0, N &ge; 0

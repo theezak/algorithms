@@ -93,7 +93,10 @@ Time complexity is O(M\*N) and space complexity O(N). All arrays are traversed f
 
 
 ```csharpTime 
-public int LongestCommonSubsequence<T>(IEnumerable<T> x, IEnumerable<T> y, IEqualityComparer<T>? comparer = default) {
+public int LongestCommonSubsequence<T>(
+      IEnumerable<T> x, 
+      IEnumerable<T> y, 
+      IEqualityComparer<T>? comparer = default) {
    var N = y.Count();
    var M = x.Count();
    var h = new int[N+1];

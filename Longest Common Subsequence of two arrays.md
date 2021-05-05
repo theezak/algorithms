@@ -97,14 +97,14 @@ public int LongestCommonSubsequence<T>(
       IEnumerable<T> x, 
       IEnumerable<T> y, 
       IEqualityComparer<T>? comparer = default) {
-   var N = y.Count();
    var M = x.Count();
-   var h = new int[N+1];
-   comparer ??= EqualityComparer<T>.Default;
-   Debug.Assert(h.All(hi=>hi == 0));
    var m = 0;
    using var xEnum = x.GetEnumerator();
+   var N = y.Count();
    using var yEnum = y.GetEnumerator();
+   var h = new int[N+1];
+   comparer ??= EqualityComparer<T>.Default;
+   Debug.Assert(h.All(hi=>hi == 0)); 
    while (xEnum.MoveNext()) {
       var n = 0;
       yEnum.Reset();

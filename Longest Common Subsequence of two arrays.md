@@ -116,7 +116,9 @@ public int LongestCommonSubsequence<T>(
          }
          else {
             a = h[n+1];
-            h[n+1] = Math.Max(h[n],h[n+1]);
+            if (h[n] > h[n+1]) {
+                h[n+1] = h[n];
+            }
          }
          n++;
       }
@@ -125,3 +127,10 @@ public int LongestCommonSubsequence<T>(
    return h[N]; 
 }
 ```
+
+A common subsequence can be represented as a set V of pairs (i,j) such that (i,j) &isin; V => x&#8729;i = y&#8729;j<br/>
+V is totally ordered with respect to the product order on \[0...M)x\[0...N): (a,b) < (c,d) &equiv; a<c &and; b<d<br/>
+Add to the algorithm invariants by introducing an array v\[0...N] of set \[0...M)x\[0...N)<br/>
+P{sub>0</sub>' : (&forall;i: 0&le;i&le;N: V&#8729;i
+
+

@@ -106,6 +106,7 @@ public int LongestCommonSubsequence<T>(
    comparer ??= EqualityComparer<T>.Default;
    Debug.Assert(h.All(hi=>hi == 0)); 
    while (xEnum.MoveNext()) {
+      var a = 0;
       var n = 0;
       yEnum.Reset();
       while (yEnum.MoveNext()) {

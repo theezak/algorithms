@@ -88,3 +88,11 @@ l&#8729;m&#8729;(n+1)<br/>
 &equiv; {Q<sub>1</sub>}<br/>
 h&#8729;(n+1)<br/>
 hence a := h(n+1)
+
+Time complexity is O(M\*N) and space complexity O(N). All arrays are traversed from left to right, so they can be for example files.
+
+
+```csharpTime 
+public int LongestCommonSubsequence<T>(IEnumerable<T> x, IEnumerable<T> y, IEqualityComparer<T>) {
+}
+```

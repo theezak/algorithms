@@ -140,12 +140,6 @@ public record Sequence {
     public Sequence? Previous {get;}
     public (int,int) Value {get;}
     
-    public Sequence() {
-        Previous = default;
-        Count = 0;
-        Value = default;
-    }
-    
     public Sequence(
             Sequence? previous,
             int m,
@@ -156,8 +150,7 @@ public record Sequence {
     }
         
     public IEnumerable<(int,int)> Enumerate() {
-        if (Count == 0) yield break;
-        if (Previous != default) {
+         if (Previous != default) {
             foreach(var item in Previous.Enumerate()) {
                 yield return item;
             }
@@ -173,7 +166,7 @@ public (int,int)[] LongestCommonSubsequence<T>(
    var m = 0;
    using var xEnum = x.GetEnumerator();
    using var yEnum = y.GetEnumerator();
-   var v = new List<Sequence>(new [] { new Sequence() });
+   var v = new List<Sequence?>(new [] { new default(Sequence?) });
    comparer ??= EqualityComparer<T>.Default;
    while (xEnum.MoveNext()) {
       var a = default(Sequence?);
@@ -181,7 +174,7 @@ public (int,int)[] LongestCommonSubsequence<T>(
       yEnum.Reset();
       while (yEnum.MoveNext()) {
          if (v.Count <= n+1) {
-             v.Add(new Sequence());
+             v.Add(default);
          }
          if (comparer.Equals(xEnum.Current, yEnum.Current)) {
             var tmp = a;
@@ -190,7 +183,7 @@ public (int,int)[] LongestCommonSubsequence<T>(
          }
          else {
             a = v[n+1];
-            if (v[n].Count > v[n+1].Count) {
+            if ((v[n]?.Count??0) > (v[n+1]?.Count??0)) {
                 v[n+1] = v[n];
             }
          }
@@ -198,7 +191,7 @@ public (int,int)[] LongestCommonSubsequence<T>(
       }
       m++;
    }
-   return v[v.Count-1].Enumerate().ToArray(); 
+   return v[v.Count-1]?.Enumerate().ToArray() ?? Array.Empty<(int,int)>(); 
 }
 ```
 

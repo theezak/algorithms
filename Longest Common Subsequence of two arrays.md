@@ -147,9 +147,9 @@ public record Sequence {
     }
     
     public Sequence(
-        Sequence? previous,
-        int m,
-        int n) {
+            Sequence? previous,
+            int m,
+            int n) {
         Previous = previous;
         Count = (previous?.Count??0)+1;
         Value = new(m,n);

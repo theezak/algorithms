@@ -89,7 +89,7 @@ l&#8729;m&#8729;(n+1)<br/>
 h&#8729;(n+1)<br/>
 hence a := h(n+1)
 
-Time complexity is O(M\*N) and space complexity O(N). An observation is that there is a small space advantage to passing the array of shortest length as y although this does not impact overall complexity. All arrays are traversed from left to right, so they can be for example files.
+Time complexity is O(M\*N) and space complexity O(N). An observation is that there is a small space advantage to passing the array of shortest length as y although this does not impact overall complexity. All arrays are traversed from left to right, so they can be for example files. We rely on determining N in the below implementation, but this can be avoided by using a non-fixed size data structure instead.
 
 
 ```csharpTime 
@@ -97,7 +97,6 @@ public int LongestCommonSubsequence<T>(
       IEnumerable<T> x, 
       IEnumerable<T> y, 
       IEqualityComparer<T>? comparer = default) {
-   var M = x.Count();
    var m = 0;
    using var xEnum = x.GetEnumerator();
    var N = y.Count();
@@ -170,7 +169,6 @@ public (int,int)[] LongestCommonSubsequence<T>(
       IEnumerable<T> x, 
       IEnumerable<T> y, 
       IEqualityComparer<T>? comparer = default) {
-   var M = x.Count();
    var m = 0;
    using var xEnum = x.GetEnumerator();
    var N = y.Count();

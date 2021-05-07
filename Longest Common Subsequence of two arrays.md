@@ -131,7 +131,77 @@ public int LongestCommonSubsequence<T>(
 
 A common subsequence can be represented as a set V of pairs (i,j) such that (i,j) &isin; V => x&#8729;i = y&#8729;j<br/>
 V is totally ordered with respect to the product order on \[0...M)x\[0...N): (a,b) < (c,d) &equiv; a<c &and; b<d<br/>
-Add to the algorithm invariants by introducing an array v\[0...N] of set \[0...M)x\[0...N)<br/>
-P{sub>0</sub>' : (&forall;i: 0&le;i&le;N: V&#8729;i
+Add to the algorithm invariants by introducing an array v\[0...N] of set \[0...M)x\[0...N) and demonstrate that |v\[n]|=h&#8729;n<br/>
+
+
+```csharpTime 
+public record Sequence {
+    public int Count {get;}
+    public Sequence? Previous {get;}
+    public (int,int) Value {get;}
+    
+    public Sequence() {
+        Previous = default;
+        Count = 0;
+        Value = default;
+    }
+    
+    public Sequence(
+        Sequence? previous,
+        int m,
+        int n) {
+        Previous = previous;
+        Count = (previous?.Count??0)+1;
+        Value = new(m,n);
+    }
+        
+    public IEnumerable<(int,int)> Enumerate() {
+        if (Count == 0) yield break;
+        if (Previous != default) {
+            foreach(var item in Previous.Enumerate()) {
+                yield return item;
+            }
+        }
+        yield return value;
+    }
+}
+
+public (int,int)[] LongestCommonSubsequence<T>(
+      IEnumerable<T> x, 
+      IEnumerable<T> y, 
+      IEqualityComparer<T>? comparer = default) {
+   var M = x.Count();
+   var m = 0;
+   using var xEnum = x.GetEnumerator();
+   var N = y.Count();
+   using var yEnum = y.GetEnumerator();
+   var v = new Sequence[N+1];
+   for (var k=0; k < v.Length; k++) {
+    v[k] = new Sequence();
+   }
+   comparer ??= EqualityComparer<T>.Default;
+   while (xEnum.MoveNext()) {
+      var a = default(Sequence?);
+      var n = 0;
+      yEnum.Reset();
+      while (yEnum.MoveNext()) {
+         if (comparer.Equals(xEnum.Current, yEnum.Current)) {
+            var tmp = a;
+            a = v[n+1];
+            v[n+1] = new Sequence(tmp, m, n);
+         }
+         else {
+            a = v[n+1];
+            if (v[n].Count > v[n+1].Count) {
+                v[n+1] = v[n];
+            }
+         }
+         n++;
+      }
+      m++;
+   }
+   return v[N].Enumerate().ToArray(); 
+}
+```
 
 

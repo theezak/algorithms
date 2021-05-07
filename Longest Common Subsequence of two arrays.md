@@ -89,7 +89,7 @@ l&#8729;m&#8729;(n+1)<br/>
 h&#8729;(n+1)<br/>
 hence a := h(n+1)
 
-Time complexity is O(M\*N) and space complexity O(N). An observation is that there is a small space advantage to passing the array of shortest length as y although this does not impact overall complexity. All arrays are traversed from left to right, so they can be for example files. Note that we relied upon N for initialization of h. This dependency was removed by introducing a list for h.
+Time complexity is O(M\*N) and space complexity O(N) (note that O(min(M,N)) is easily achieved by choosing the smallest array for y). An observation is that there is a small space advantage to passing the array of shortest length as y although this does not impact overall complexity. All arrays are traversed from left to right, so they can be for example files. Note that we relied upon N for initialization of h. This dependency was removed by introducing a list for h.
 
 
 ```csharpTime 

@@ -99,7 +99,6 @@ public int LongestCommonSubsequence<T>(
       IEqualityComparer<T>? comparer = default) {
    var m = 0;
    using var xEnum = x.GetEnumerator();
-   var N = y.Count();
    using var yEnum = y.GetEnumerator();
    var h = new List<int>(new [] {0});
    comparer ??= EqualityComparer<T>.Default;
@@ -127,7 +126,7 @@ public int LongestCommonSubsequence<T>(
       }
       m++;
    }
-   return h[N]; 
+   return h[h.Count-1]; 
 }
 ```
 
@@ -200,7 +199,7 @@ public (int,int)[] LongestCommonSubsequence<T>(
       }
       m++;
    }
-   return v[N].Enumerate().ToArray(); 
+   return v[v.Count-1].Enumerate().ToArray(); 
 }
 ```
 

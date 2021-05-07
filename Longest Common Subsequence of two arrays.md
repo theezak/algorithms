@@ -204,4 +204,4 @@ public (int,int)[] LongestCommonSubsequence<T>(
 }
 ```
 
-A final note is that solutions with lower complexity do exist, for example <a href="https://en.wikipedia.org/wiki/Hunt%E2%80%93Szymanski_algorithm">the Hunt-Szymanski algorithm</a>
+A final note is that solutions with lower complexity do exist, for example <a href="https://en.wikipedia.org/wiki/Hunt%E2%80%93Szymanski_algorithm">the Hunt-Szymanski algorithm</a> or <a href="https://en.wikipedia.org/wiki/Hirschberg%27s_algorithm">Hirschberg's algorithm</a>.

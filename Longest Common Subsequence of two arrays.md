@@ -89,7 +89,7 @@ l&#8729;m&#8729;(n+1)<br/>
 h&#8729;(n+1)<br/>
 hence a := h(n+1)
 
-Time complexity is O(M\*N) and space complexity O(N). An observation is that there is a small space advantage to passing the array of shortest length as y although this does not impact overall complexity. All arrays are traversed from left to right, so they can be for example files. We rely on determining N in the below implementation, but this can be avoided by using a non-fixed size data structure instead.
+Time complexity is O(M\*N) and space complexity O(N). An observation is that there is a small space advantage to passing the array of shortest length as y although this does not impact overall complexity. All arrays are traversed from left to right, so they can be for example files. Note that we relied upon N for initialization of h. This dependency was removed by introducing a list for h.
 
 
 ```csharpTime 
@@ -101,7 +101,7 @@ public int LongestCommonSubsequence<T>(
    using var xEnum = x.GetEnumerator();
    var N = y.Count();
    using var yEnum = y.GetEnumerator();
-   var h = new int[N+1];
+   var h = new List<int>(new [] {0});
    comparer ??= EqualityComparer<T>.Default;
    Debug.Assert(h.All(hi=>hi == 0)); 
    while (xEnum.MoveNext()) {
@@ -109,6 +109,9 @@ public int LongestCommonSubsequence<T>(
       var n = 0;
       yEnum.Reset();
       while (yEnum.MoveNext()) {
+         if (h.Count <= n+1) {
+            h.Add(0);
+         }
          if (comparer.Equals(xEnum.Current, yEnum.Current)) {
             var tmp = a;
             a = h[n+1];
@@ -171,9 +174,8 @@ public (int,int)[] LongestCommonSubsequence<T>(
       IEqualityComparer<T>? comparer = default) {
    var m = 0;
    using var xEnum = x.GetEnumerator();
-   var N = y.Count();
    using var yEnum = y.GetEnumerator();
-   var v = new Sequence[N+1];
+   var v = new List<Sequence>(new [] { new Sequence() });
    for (var k=0; k < v.Length; k++) {
     v[k] = new Sequence();
    }
@@ -183,6 +185,9 @@ public (int,int)[] LongestCommonSubsequence<T>(
       var n = 0;
       yEnum.Reset();
       while (yEnum.MoveNext()) {
+         if (v.Count <= n+1) {
+             v.Add(new Sequence());
+         }
          if (comparer.Equals(xEnum.Current, yEnum.Current)) {
             var tmp = a;
             a = v[n+1];

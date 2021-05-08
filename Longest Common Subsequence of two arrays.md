@@ -195,6 +195,6 @@ public (int,int)[] LongestCommonSubsequence<T>(
 }
 ```
 
-Space complexity for v is O(M\*N) worst case (when all elements are equal), but will typically be better since it is in the order of matches between elements from x and y. The algorithm can also be improved for this worst case to immediately return when &forall;n: 0<n&le;N: |v\[n]|=1 since all elements of y are equal to one element of x.
+Space complexity for v is O(M\*N) worst case (when all elements are equal), but will typically be better since it is in the order of matches between elements from x and y. The algorithm can also be improved for this worst case to immediately return when &forall;n: 0<n&le;N: |v\[n]|=1 since all elements of y are equal to one element of x resulting in a common subsequence of length 1.
 
 A final note is that solutions with lower complexity do exist, for example <a href="https://en.wikipedia.org/wiki/Hunt%E2%80%93Szymanski_algorithm">the Hunt-Szymanski algorithm</a> or <a href="https://en.wikipedia.org/wiki/Hirschberg%27s_algorithm">Hirschberg's algorithm</a>.

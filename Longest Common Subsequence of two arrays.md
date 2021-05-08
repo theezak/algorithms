@@ -24,7 +24,7 @@ if m = 0 &or; n = 0 -> len := 0<br/>
 elif x(m-1) = y(n-1) -> len := 1 + len(m-1,n-1)<br/>
 else len := len(m-1,n) max len(m,n-1)<br/>
     
-len(M,N) is the longest common subsequence for arrays x\[0...M) and y\[0...N). Note that time complexity is exponential. Performance can be improved through memoization, but this adds a space complexity of M\*N.
+len(M,N) is the longest common subsequence for arrays x\[0...M) and y\[0...N). Note that time complexity is exponential O(2<sup>min(M,N)</sup>). Performance can be improved through memoization, but this adds a space complexity of M\*N.
 
 ## Dynamic programming solution
 

@@ -38,7 +38,7 @@ hence m &ne; M is the guard of the repetition where m represents a row index and
 Substitution of m=0: <br/>
 (&forall;i: 0&le;i&le;N: h&#8729;i = l&#8729;0&#8729;i)<br/>
 &equiv; \<by definition of l\><br/>
-(&forall;i: 0&le;i&le;N: h&equiv;i = 0)
+(&forall;i: 0&le;i&le;N: h&#8729;i = 0)
 
 Thus initialization step is:<br/>
 k = 0;<br/>

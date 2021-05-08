@@ -24,7 +24,7 @@ if m = 0 &or; n = 0 -> len := 0<br/>
 elif x(m-1) = y(n-1) -> len := 1 + len(m-1,n-1)<br/>
 else len := len(m-1,n) max len(m,n-1)<br/>
     
-len(M,N) is the longest common subsequence for arrays x\[0...M) and y\[0...N).
+len(M,N) is the longest common subsequence for arrays x\[0...M) and y\[0...N). Note that time complexity is exponential. Performance can be improved through memoization, but this adds a space complexity of M\*N.
 
 ## Dynamic programming solution
 
@@ -195,4 +195,4 @@ public (int,int)[] LongestCommonSubsequence<T>(
 }
 ```
 
-A final note is that solutions with lower complexity do exist, for example <a href="https://en.wikipedia.org/wiki/Hunt%E2%80%93Szymanski_algorithm">the Hunt-Szymanski algorithm</a> or <a href="https://en.wikipedia.org/wiki/Hirschberg%27s_algorithm">Hirschberg's algorithm</a>.
+Space complexity for v is O(M\*N) worst case, but will typically be better since it is in the order of matches between elements from x and y. A final note is that solutions with lower complexity do exist, for example <a href="https://en.wikipedia.org/wiki/Hunt%E2%80%93Szymanski_algorithm">the Hunt-Szymanski algorithm</a> or <a href="https://en.wikipedia.org/wiki/Hirschberg%27s_algorithm">Hirschberg's algorithm</a>.

@@ -28,7 +28,7 @@ len(M,N) is the longest common subsequence for arrays x\[0...M) and y\[0...N). N
 
 ## Dynamic programming solution
 
-There is however also a dynamic programming solution. The dynamic programming solution requires additional space (matrix of MxN) to store the values needed for computation. Thus an additional requirement is to minimize the storage requirement.
+There is however also a dynamic programming solution. The straight-forward dynamic programming solution requires additional space (matrix of MxN) to store the values needed for computation, but this can be improved upon. Thus an additional requirements is to use minimal space.
 
 The idea to compute function l row by row is formalized as follows: we introduce an integer array h\[0...N], integer m and accompanying invariants:<br />
 P<sub>0</sub>: h = l&#8729;m (i.e. &forall;i : 0&le;i&le;N: h&#8729;i = l&#8729;m&#8729;i))<br/>

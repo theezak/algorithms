@@ -171,6 +171,7 @@ public (int,int)[] LongestCommonSubsequence<T>(
    while (xEnum.MoveNext()) {
       var a = default(Sequence?);
       var n = 0;
+      //var allEqual = true;
       yEnum.Reset();
       while (yEnum.MoveNext()) {
          if (v.Count <= n+1) {
@@ -182,6 +183,7 @@ public (int,int)[] LongestCommonSubsequence<T>(
             v[n+1] = new Sequence(tmp, m, n);
          }
          else {
+            //allEqual = false;
             a = v[n+1];
             if ((v[n]?.Count??0) > (v[n+1]?.Count??0)) {
                 v[n+1] = v[n];
@@ -189,12 +191,13 @@ public (int,int)[] LongestCommonSubsequence<T>(
          }
          n++;
       }
+      //if (allEqual) { break; }
       m++;
    }
    return v[v.Count-1]?.Enumerate().ToArray() ?? Array.Empty<(int,int)>(); 
 }
 ```
 
-Space complexity for v is O(M\*N) worst case (when all elements are equal), but will typically be better since it is in the order of matches between elements from x and y. The algorithm can also be improved for this worst case to immediately return when &forall;n: 0<n&le;N: |v\[n]|=1 since all elements of y are equal to one element of x resulting in a longest common subsequence of length 1. The algorithm presented here does however not optimize for special cases like a very small number of different values.
+Space complexity for v is O(M\*N) worst case (when all elements are equal), but will typically be better since it is in the order of matches between elements from x and y. The algorithm can also be improved for this worst case to immediately return when &forall;n: 0<n&le;N: |v\[n]|=1 since all elements of y are equal to one element of x resulting in a longest common subsequence of length 1. This has been stubbed out in the above algorithm with the 'allEqual' invariant. The algorithm presented here does however not optimize for special cases like a very small number of different values.
 
 A final note is that solutions with lower complexity do exist, for example <a href="https://en.wikipedia.org/wiki/Hunt%E2%80%93Szymanski_algorithm">the Hunt-Szymanski algorithm</a> or <a href="https://en.wikipedia.org/wiki/Hirschberg%27s_algorithm">Hirschberg's algorithm</a>.

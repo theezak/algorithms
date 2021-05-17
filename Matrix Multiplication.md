@@ -7,5 +7,5 @@ For example given Matrix A 5x2, matrix B 2x4 and matrix C 4x2 compute A&sdot;B&s
 Let C&sdot;i&sdot;j = minimal cost for computing (&prod;p: i&le;p<j: A&sdot;p) for 0&le;i<j&le;L , then C&sdot;0&sdot;L is the minimal cost for computing (&prod;p: 0&le;p<L: A&sdot;p). 
 
 C&sdot;i&sdot;(i+1) = 0 (0&le;i<L)
-0&le;i<j-1<L
-C&sdot;i&sdot;j is computed as follows:
+
+C&sdot;i&sdot;j is computed as follows: C&sdot;i&sdot;j is split at some k for the last matrix multiplication (A&sdot;i ... A&sdot;(k-1)) * (A&sdot;k ... A&sdot;(j-1)). This multiplies a r&sdot;i x r&sdot;k matrix with a r&sdot;k * r&sdot;j matrix. The cost of splitting at k is C&sdot;i&Sdot;k + C&sdotlk&sdot;j + r&sdot;i * r&sdot;k * r&sdot j. We want the minimum across all k's that we can choose in this expression.

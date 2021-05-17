@@ -8,4 +8,4 @@ Let C&sdot;i&sdot;j = minimal cost for computing (&prod;p: i&le;p<j: A&sdot;p) f
 
 C&sdot;i&sdot;(i+1) = 0 (0&le;i<L)
 
-C&sdot;i&sdot;j is computed as follows: C&sdot;i&sdot;j is split at some k for the last matrix multiplication (A&sdot;i ... A&sdot;(k-1)) * (A&sdot;k ... A&sdot;(j-1)). This multiplies a r&sdot;i x r&sdot;k matrix with a r&sdot;k * r&sdot;j matrix. The cost of splitting at k is C&sdot;i&Sdot;k + C&sdotlk&sdot;j + r&sdot;i * r&sdot;k * r&sdot j. We want the minimum across all k's that we can choose in this expression.
+C&sdot;i&sdot;j is computed as follows: C&sdot;i&sdot;j is split at some k for the last matrix multiplication (A&sdot;i ... A&sdot;(k-1)) * (A&sdot;k ... A&sdot;(j-1)). This multiplies a r&sdot;i x r&sdot;k matrix with a r&sdot;k * r&sdot;j matrix. The cost of splitting at k is C&sdot;i&sdot;k + C&sdot;k&sdot;j + r&sdot;i * r&sdot;k * r&sdot j. We want the minimum across all k's that we can choose in this expression.

@@ -13,6 +13,6 @@ C&sdot;i&sdot;j is computed as follows: C&sdot;i&sdot;j is split at some k for t
 First introduce an array X\[0...L)x\[1...L] of integer to represent this square. We design a repetition post-condition R: (&forall;i,j: 0&le;i<j&le;L: x&sdot;i&sdot;j = C&sdot;i&sdot;j). Choosing as invariants P<sub>0</sub>: (&forall;i,j: 0&le;i<j&le;L &and; j-i<d: x&sdot;i&sdot;j = C&sdot;i&sdot;j) with P<sub>1</sub>: 2&le;d&le;L+1. d represents a diagonal. P<sub>0</sub> &and; d=L+1 => R (guard d&ne;L+1). Initialization is d := 2. 
 
 (&forall;i,j: 0&le;i<j&le;L &and; j-i<2: x&sdot;i&sdot;j = C&sdot;i&sdot;j) <br/>
-&equiv; {0&le;i<j&le;L &and; j-i<2 &equiv; 0&le;i<j&leL &and; j=i+1}<br/>
+&equiv; {0&le;i<j&le;L &and; j-i<2 &equiv; 0&le;i<j&le;L &and; j=i+1}<br/>
 (&forall;i: 0&le;i<L: x&sdot;i&sdot;(i+1) = C&sdot;i&sdot;(i+1))
 

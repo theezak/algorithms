@@ -14,5 +14,7 @@ First introduce an array X\[0...L)x\[1...L] of integer to represent this square.
 
 (&forall;i,j: 0&le;i<j&le;L &and; j-i<2: x&sdot;i&sdot;j = C&sdot;i&sdot;j) <br/>
 &equiv; {0&le;i<j&le;L &and; j-i<2 &equiv; 0&le;i<j&le;L &and; j=i+1}<br/>
-(&forall;i: 0&le;i<L: x&sdot;i&sdot;(i+1) = C&sdot;i&sdot;(i+1))
+(&forall;i: 0&le;i<L: x&sdot;i&sdot;(i+1) = C&sdot;i&sdot;(i+1))<br/>
+&equiv; {definition if C} <br/>
+(&forall;i: 0&le;i<L: x&Sdot;i&sdot;(i+1) - 0)
 
